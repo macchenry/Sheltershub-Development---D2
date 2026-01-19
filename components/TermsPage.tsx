@@ -19,7 +19,7 @@ const TermsPage: React.FC<TermsPageProps> = ({ onNavigate }) => {
       {/* Page Title Section */}
       <div className="bg-white border-b border-gray-200">
         <div className="container mx-auto px-4 py-12 text-center">
-            <h1 className="text-3xl font-bold text-[#0A2B4C] mb-2">Terms & Conditions</h1>
+            <h1 className="text-3xl font-bold text-[#0A2B4C] mb-2">Terms &amp; Conditions</h1>
             <p className="text-gray-500 text-lg max-w-2xl mx-auto">Please read these terms carefully before using Sheltershub.</p>
         </div>
       </div>
@@ -31,7 +31,7 @@ const TermsPage: React.FC<TermsPageProps> = ({ onNavigate }) => {
             <section>
                 <h2 className="text-xl font-bold text-[#0A2B4C] mb-4 pb-2 border-b border-gray-100">1. Introduction</h2>
                 <p>
-                    Welcome to Sheltershub. By accessing or using our website, mobile application, and services, you agree to comply with and be bound by these Terms & Conditions. If you do not agree with any part of these terms, you must not use our platform.
+                    Welcome to Sheltershub. By accessing or using our website, mobile application, and services, you agree to comply with and be bound by these Terms &amp; Conditions. If you do not agree with any part of these terms, you must not use our platform.
                 </p>
             </section>
 
@@ -68,7 +68,7 @@ const TermsPage: React.FC<TermsPageProps> = ({ onNavigate }) => {
             </section>
 
             <section>
-                <h2 className="text-xl font-bold text-[#0A2B4C] mb-4 pb-2 border-b border-gray-100">5. Payments & Subscriptions</h2>
+                <h2 className="text-xl font-bold text-[#0A2B4C] mb-4 pb-2 border-b border-gray-100">5. Payments &amp; Subscriptions</h2>
                 <p>
                     Certain features, such as premium listings or verified agent status, may require payment. Fees are non-refundable unless otherwise stated. Billing cycles for subscriptions will be clearly communicated at the time of purchase. Sheltershub reserves the right to change pricing with reasonable notice.
                 </p>
@@ -103,14 +103,14 @@ const TermsPage: React.FC<TermsPageProps> = ({ onNavigate }) => {
             <section>
                 <h2 className="text-xl font-bold text-[#0A2B4C] mb-4 pb-2 border-b border-gray-100">9. Termination of Accounts</h2>
                 <p>
-                    We reserve the right to suspend or terminate your account at our sole discretion, without notice, if you violate these Terms & Conditions or engage in conduct that harms Sheltershub or its users.
+                    We reserve the right to suspend or terminate your account at our sole discretion, without notice, if you violate these Terms &amp; Conditions or engage in conduct that harms Sheltershub or its users.
                 </p>
             </section>
 
             <section>
                 <h2 className="text-xl font-bold text-[#0A2B4C] mb-4 pb-2 border-b border-gray-100">10. Governing Law</h2>
                 <p>
-                    These Terms & Conditions shall be governed by and construed in accordance with the laws of Ghana. Any disputes arising from these terms shall be subject to the exclusive jurisdiction of the courts in Ghana.
+                    These Terms &amp; Conditions shall be governed by and construed in accordance with the laws of Ghana. Any disputes arising from these terms shall be subject to the exclusive jurisdiction of the courts in Ghana.
                 </p>
             </section>
 
@@ -119,7 +119,7 @@ const TermsPage: React.FC<TermsPageProps> = ({ onNavigate }) => {
         {/* Acceptance Section */}
         <div className="mt-12 text-center">
             <p className="text-gray-600 mb-6">
-                By using Sheltershub, you acknowledge and agree to these Terms & Conditions.
+                By using Sheltershub, you acknowledge and agree to these Terms &amp; Conditions.
             </p>
             <button 
                 onClick={() => onNavigate('home')}

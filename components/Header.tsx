@@ -149,7 +149,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, activePage = 'home', userRo
                 className="flex items-center gap-2 hover:text-brand-orange transition-colors focus:outline-none"
              >
                 <span>Account</span>
-                <svg className={`w-4 h-4 transition-transform ${accountOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                <svg className={`w-4 h-4 transition-transform ${accountOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
              </button>
 
              {/* Account Dropdown Menu */}
@@ -182,7 +182,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, activePage = 'home', userRo
         </div>
         <div className="lg:hidden">
             <button onClick={() => setMenuOpen(!menuOpen)} className="text-gray-600 focus:outline-none" aria-label="Open menu">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
             </button>
         </div>
       </div>
@@ -203,7 +203,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, activePage = 'home', userRo
                                     className={`${(activePage === link.name.toLowerCase() || activePage === submenu.activePage) ? 'text-brand-orange' : 'text-gray-800'} hover:text-brand-orange font-semibold text-base transition-colors flex items-center gap-1 h-full`}
                                 >
                                     {link.name}
-                                    <svg className="w-4 h-4 mt-0.5 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                                    <svg className="w-4 h-4 mt-0.5 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
                                 </a>
                                 {/* Submenu */}
                                 <div className="absolute top-full left-1/2 -translate-x-1/2 w-48 bg-white border border-gray-100 shadow-xl rounded-b-lg overflow-hidden hidden group-hover:block z-50">

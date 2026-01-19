@@ -95,7 +95,7 @@ const ReviewsSection: React.FC<ReviewsSectionProps> = ({ targetName, userRole })
 
   return (
     <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 md:p-8 mt-8">
-      <h3 className="text-xl font-bold text-[#0A2B4C] mb-6">Reviews & Ratings</h3>
+      <h3 className="text-xl font-bold text-[#0A2B4C] mb-6">Reviews &amp; Ratings</h3>
       
       <div className="flex flex-col md:flex-row items-center gap-8 mb-10 bg-gray-50 p-6 rounded-xl">
         <div className="text-center md:border-r border-gray-200 md:pr-8 w-full md:w-auto">

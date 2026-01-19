@@ -8,8 +8,14 @@ interface AgencyLayoutProps {
   title: string;
 }
 
+interface MenuItem {
+  name: string;
+  page: string;
+  icon: React.ReactNode;
+}
+
 const AgencyLayout: React.FC<AgencyLayoutProps> = ({ children, onNavigate, activePage, title }) => {
-  const menuItems = [
+  const menuItems: MenuItem[] = [
     { name: 'Dashboard', page: 'agency-dashboard', icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" /> },
     { name: 'Team Members', page: 'agency-team', icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /> },
     { name: 'Add Agent', page: 'agency-add-agent', icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" /> },
@@ -22,7 +28,7 @@ const AgencyLayout: React.FC<AgencyLayoutProps> = ({ children, onNavigate, activ
       {/* Sidebar */}
       <aside className="w-64 bg-[#0A2B4C] text-white flex-shrink-0 flex flex-col transition-all duration-300">
         <div className="p-6 border-b border-gray-700">
-          <button onClick={() => onNavigate('home')} className="flex items-center gap-2">
+          <button onClick={() => onNavigate('home')} className="flex items-center gap-2 focus:outline-none">
             <span className="text-xl font-bold tracking-tight">Sheltershub<span className="text-[#F9A826]">Agency</span></span>
           </button>
         </div>
@@ -39,7 +45,7 @@ const AgencyLayout: React.FC<AgencyLayoutProps> = ({ children, onNavigate, activ
                       : 'text-gray-300 hover:bg-white/10 hover:text-white'
                   }`}
                 >
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     {item.icon}
                   </svg>
                   {item.name}
@@ -54,7 +60,7 @@ const AgencyLayout: React.FC<AgencyLayoutProps> = ({ children, onNavigate, activ
              onClick={() => onNavigate('home')}
              className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors w-full px-4 py-2"
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" /></svg>
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" /></svg>
             Logout
           </button>
         </div>
@@ -66,7 +72,7 @@ const AgencyLayout: React.FC<AgencyLayoutProps> = ({ children, onNavigate, activ
             <h1 className="text-xl font-bold text-gray-800">{title}</h1>
             <div className="flex items-center gap-4">
                  <button className="text-gray-500 hover:text-gray-700 relative">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
                     <span className="absolute top-0 right-0 block h-2 w-2 rounded-full bg-red-500 ring-2 ring-white"></span>
                  </button>
                  <div className="flex items-center gap-3">

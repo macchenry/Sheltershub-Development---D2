@@ -126,10 +126,10 @@ const App: React.FC = () => {
     if (currentPage === 'admin-reports') return renderRestricted(<AdminReports onNavigate={handleNavigate} userRole={userRole} />, ['admin', 'editor']); // Editor can view basic reports (handled in component)
     if (currentPage === 'admin-fraud') return renderRestricted(<AdminFraudManagement onNavigate={handleNavigate} userRole={userRole} />, ['admin']);
     
-    // Admin CMS Edit Routes - Unrestricted as per request
+    // Admin CMS Edit Routes
     if (currentPage.startsWith('admin-edit-')) {
         const pageName = currentPage.replace('admin-edit-', '');
-        return <AdminPageEditor pageName={pageName} onNavigate={handleNavigate} userRole={userRole} />;
+        return renderRestricted(<AdminPageEditor pageName={pageName} onNavigate={handleNavigate} userRole={userRole} />, ['admin', 'editor']);
     }
 
     // Admin Site Options Routes

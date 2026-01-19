@@ -41,7 +41,7 @@ const DeveloperSettings: React.FC<DeveloperSettingsProps> = ({ onNavigate }) => 
                 </div>
             </div>
 
-            <h3 className="text-lg font-bold text-[#0A2B4C] mb-6 border-b pb-2">Security & Preferences</h3>
+            <h3 className="text-lg font-bold text-[#0A2B4C] mb-6 border-b pb-2">Security &amp; Preferences</h3>
             
             <div className="space-y-4 mb-8">
                 <div className="flex items-center justify-between py-2">

@@ -201,7 +201,7 @@ const AddPropertyPage: React.FC<AddPropertyPageProps> = ({ onNavigate }) => {
 
             {/* 3. Features & Description */}
             <div className="bg-white p-6 md:p-8 rounded-xl border border-gray-200 shadow-sm">
-                <h2 className="text-xl font-bold text-[#0A2B4C] mb-6 border-b pb-4">Features & Description</h2>
+                <h2 className="text-xl font-bold text-[#0A2B4C] mb-6 border-b pb-4">Features &amp; Description</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                     <div>
                         <label className="block text-sm font-semibold text-gray-700 mb-2">Bedrooms</label>

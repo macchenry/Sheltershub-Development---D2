@@ -13,7 +13,7 @@ const AgencySettings: React.FC<AgencySettingsProps> = ({ onNavigate }) => {
             
             <div className="mb-8 border-b border-gray-200 pb-2">
                 <nav className="flex gap-6">
-                    <button className="text-[#0A2B4C] font-bold border-b-2 border-[#0A2B4C] pb-2">Profile & Branding</button>
+                    <button className="text-[#0A2B4C] font-bold border-b-2 border-[#0A2B4C] pb-2">Profile &amp; Branding</button>
                     <button className="text-gray-500 hover:text-gray-800 pb-2">Security</button>
                     <button className="text-gray-500 hover:text-gray-800 pb-2">Notifications</button>
                 </nav>
