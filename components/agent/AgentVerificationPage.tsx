@@ -52,8 +52,7 @@ const AgentVerificationPage: React.FC<AgentVerificationPageProps> = ({ onNavigat
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleFinalSubmit = () => {
     // Simulate submission delay
     setTimeout(() => {
       setIsSubmitted(true);
@@ -144,7 +143,7 @@ const AgentVerificationPage: React.FC<AgentVerificationPageProps> = ({ onNavigat
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+        <form onSubmit={(e) => e.preventDefault()} className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
           
           {/* Step 1: Personal & Contact Information */}
           {step === 1 && (
@@ -451,10 +450,11 @@ const AgentVerificationPage: React.FC<AgentVerificationPageProps> = ({ onNavigat
               </button>
             ) : (
               <button 
-                type="submit"
+                type="button"
+                onClick={handleFinalSubmit}
                 className="px-8 py-3 bg-[#F9A826] text-white font-bold rounded-lg hover:bg-[#d88d15] shadow-md transition-colors"
               >
-                Submit for Verification
+                Send Verification
               </button>
             )}
           </div>

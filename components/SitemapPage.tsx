@@ -100,6 +100,9 @@ const SitemapPage: React.FC<SitemapPageProps> = ({ onNavigate }) => {
         { name: 'Features', page: 'admin-site-options-features' },
         { name: 'Regions', page: 'admin-site-options-region' },
         { name: 'Cities', page: 'admin-site-options-city' },
+        { name: 'Area', page: 'admin-site-options-area' },
+        { name: 'Agencies', page: 'admin-site-options-agencies' },
+        { name: 'Agents', page: 'admin-site-options-agents' },
         { name: 'Prefix & Suffix', page: 'admin-site-options-prefix-suffix' },
     ]},
     { title: 'Admin: CMS Pages', links: [
