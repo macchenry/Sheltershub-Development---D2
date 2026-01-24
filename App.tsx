@@ -38,8 +38,9 @@ import UserProfilePage from './components/UserProfilePage';
 import ComparePropertiesPage from './components/ComparePropertiesPage';
 import FavoritesPage from './components/FavoritesPage';
 import ReportFraudPage from './components/ReportFraudPage';
-import ReportAgentPage from './components/ReportAgentPage';
 import AccessDeniedPage from './components/AccessDeniedPage';
+import HomeForRentPage from './components/HomeForRentPage';
+import HomeForSalePage from './components/HomeForSalePage';
 
 // Admin Pages
 import AdminDashboard from './components/admin/AdminDashboard';
@@ -188,6 +189,14 @@ const App: React.FC = () => {
       return <ForSalePage onNavigate={handleNavigate} />;
     }
 
+    if (currentPage === 'home-for-rent') {
+      return <HomeForRentPage onNavigate={handleNavigate} />;
+    }
+
+    if (currentPage === 'home-for-sale') {
+      return <HomeForSalePage onNavigate={handleNavigate} />;
+    }
+
     if (currentPage === 'agents') {
       return <AgentsPage onNavigate={handleNavigate} />;
     }
@@ -213,7 +222,6 @@ const App: React.FC = () => {
     if (currentPage === 'faq') return <FAQPage onNavigate={handleNavigate} />;
     if (currentPage === 'terms') return <TermsPage onNavigate={handleNavigate} />;
     if (currentPage === 'report-fraud') return <ReportFraudPage onNavigate={handleNavigate} userRole={userRole} />;
-    if (currentPage === 'report-agent') return <ReportAgentPage onNavigate={handleNavigate} />;
     if (currentPage === 'user-profile') return <UserProfilePage onNavigate={handleNavigate} />;
     if (currentPage === '404') return <NotFoundPage onNavigate={handleNavigate} />;
 

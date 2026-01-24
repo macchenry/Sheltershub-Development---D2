@@ -35,6 +35,8 @@ export const wideAdSliderImages = [
 const generateProperties = (startId: number, count: number): Property[] => {
     const properties: Property[] = [];
     const newImageUrl = 'https://i.ibb.co/NnZzSLFd/Sample-Card-Image.jpg';
+    const propertyTypes = ['House', 'Apartment', 'Condo', 'Townhouse', 'Commercial', 'Land'];
+
     for (let i = 0; i < count; i++) {
         // Randomize status including Sold
         const rand = Math.random();
@@ -42,17 +44,21 @@ const generateProperties = (startId: number, count: number): Property[] => {
         if (rand > 0.6) status = PropertyStatus.ForRent;
         if (rand > 0.9) status = PropertyStatus.Sold;
 
+        // Randomize Type
+        const typeIndex = Math.floor(Math.random() * propertyTypes.length);
+        const selectedType = propertyTypes[typeIndex];
+
         properties.push({
             id: startId + i,
             images: [newImageUrl],
             status: status,
             daysAgo: Math.floor(Math.random() * 30) + 1,
             isPremium: Math.random() > 0.7,
-            propertyType: 'House',
-            name: i === 0 && startId === 10 ? 'Lakeside Estate' : 'Modern Family Home',
-            beds: i === 0 && startId === 10 ? 3 : Math.floor(Math.random() * 3) + 2,
-            baths: i === 0 && startId === 10 ? 4 : Math.floor(Math.random() * 3) + 2,
-            garage: i === 0 && startId === 10 ? 2 : Math.floor(Math.random() * 2) + 1,
+            propertyType: selectedType,
+            name: i === 0 && startId === 10 ? 'Lakeside Estate' : (selectedType === 'Commercial' ? 'Modern Office Space' : 'Modern Family Home'),
+            beds: selectedType === 'Land' || selectedType === 'Commercial' ? 0 : (i === 0 && startId === 10 ? 3 : Math.floor(Math.random() * 3) + 2),
+            baths: selectedType === 'Land' || selectedType === 'Commercial' ? 0 : (i === 0 && startId === 10 ? 4 : Math.floor(Math.random() * 3) + 2),
+            garage: selectedType === 'Land' ? 0 : (i === 0 && startId === 10 ? 2 : Math.floor(Math.random() * 2) + 1),
             areaSqm: i === 0 && startId === 10 ? 350 : Math.floor(Math.random() * 300) + 100,
             priceGHS: i === 0 && startId === 10 ? 1830055 : Math.floor(Math.random() * 2000000) + 500000,
             priceUSD: i === 0 && startId === 10 ? 150000 : Math.floor(Math.random() * 150000) + 40000,
@@ -102,8 +108,8 @@ export const allPropertiesList: Property[] = generateProperties(22, 12); // Gene
 export const footerLinks = {
     'Property Type': {
         'Residential': [
-            { name: 'House for Rent', href: '#' },
-            { name: 'House for Sale', href: '#' },
+            { name: 'For Rent', href: '#' },
+            { name: 'For Sale', href: '#' },
             { name: 'Apartment/Condos for Rent', href: '#' },
             { name: 'Apartment/Condos for Sale', href: '#' },
             { name: 'Land for Sale', href: '#' },

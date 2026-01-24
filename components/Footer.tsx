@@ -27,9 +27,19 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <div>
             <h3 className="font-bold mb-4">Residential</h3>
             <ul className="space-y-2 text-sm">
-              {propertyTypeLinks['Residential'].map((link) => (
-                <li key={link.name}><a href={link.href} className="hover:text-brand-orange">{link.name}</a></li>
-              ))}
+                <li>
+                    <a href="#" onClick={(e) => handleLinkClick(e, '#', 'for-rent')} className="hover:text-brand-orange">
+                        For Rent
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onClick={(e) => handleLinkClick(e, '#', 'for-sale')} className="hover:text-brand-orange">
+                        For Sale
+                    </a>
+                </li>
+                {propertyTypeLinks['Residential'].filter(link => link.name !== 'For Rent' && link.name !== 'For Sale').map((link) => (
+                    <li key={link.name}><a href={link.href} className="hover:text-brand-orange">{link.name}</a></li>
+                ))}
             </ul>
           </div>
 

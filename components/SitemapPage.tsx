@@ -22,7 +22,6 @@ const SitemapPage: React.FC<SitemapPageProps> = ({ onNavigate }) => {
         { name: 'Single Blog Article (Demo)', page: 'blog-detail' },
         { name: 'Terms & Conditions', page: 'terms' },
         { name: 'Report Fraud', page: 'report-fraud' },
-        { name: 'Report Agent', page: 'report-agent' },
         { name: 'Sitemap', page: 'sitemap' },
         { name: '404 Error Page', page: '404' },
         { name: 'Access Denied', page: 'access-denied' },
@@ -125,6 +124,8 @@ const SitemapPage: React.FC<SitemapPageProps> = ({ onNavigate }) => {
     ]},
   ];
 
+  let linkCounter = 1;
+
   return (
     <div className="bg-gray-50 min-h-screen font-sans">
       <Header onNavigate={onNavigate} activePage="home" />
@@ -142,17 +143,20 @@ const SitemapPage: React.FC<SitemapPageProps> = ({ onNavigate }) => {
                 <div key={idx} className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 h-full">
                     <h2 className="text-lg font-bold text-[#0A2B4C] mb-4 border-b pb-2">{section.title}</h2>
                     <ul className="space-y-2.5">
-                        {section.links.map((link, linkIdx) => (
-                            <li key={linkIdx}>
-                                <button 
-                                    onClick={() => onNavigate(link.page)}
-                                    className="text-gray-600 hover:text-[#F9A826] hover:underline flex items-center gap-2 transition-colors text-left text-sm w-full"
-                                >
-                                    <span className="w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span>
-                                    {link.name}
-                                </button>
-                            </li>
-                        ))}
+                        {section.links.map((link, linkIdx) => {
+                            const currentCount = linkCounter++;
+                            return (
+                                <li key={linkIdx}>
+                                    <button 
+                                        onClick={() => onNavigate(link.page)}
+                                        className="text-gray-600 hover:text-[#F9A826] hover:underline flex items-start gap-2 transition-colors text-left text-sm w-full"
+                                    >
+                                        <span className="text-[#F9A826] font-mono text-xs font-bold mt-0.5 min-w-[20px] text-right">{currentCount}.</span>
+                                        <span>{link.name}</span>
+                                    </button>
+                                </li>
+                            );
+                        })}
                     </ul>
                 </div>
             ))}
