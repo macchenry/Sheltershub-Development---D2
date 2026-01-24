@@ -41,6 +41,11 @@ import ReportFraudPage from './components/ReportFraudPage';
 import AccessDeniedPage from './components/AccessDeniedPage';
 import HomeForRentPage from './components/HomeForRentPage';
 import HomeForSalePage from './components/HomeForSalePage';
+import ApartmentForRentPage from './components/ApartmentForRentPage';
+import ApartmentForSalePage from './components/ApartmentForSalePage';
+import LandForSalePage from './components/LandForSalePage';
+import TownhouseForRentPage from './components/TownhouseForRentPage';
+import TownhouseForSalePage from './components/TownhouseForSalePage';
 
 // Admin Pages
 import AdminDashboard from './components/admin/AdminDashboard';
@@ -195,6 +200,26 @@ const App: React.FC = () => {
 
     if (currentPage === 'home-for-sale') {
       return <HomeForSalePage onNavigate={handleNavigate} />;
+    }
+
+    if (currentPage === 'apartment-for-rent') {
+      return <ApartmentForRentPage onNavigate={handleNavigate} />;
+    }
+
+    if (currentPage === 'apartment-for-sale') {
+      return <ApartmentForSalePage onNavigate={handleNavigate} />;
+    }
+
+    if (currentPage === 'land-for-sale') {
+      return <LandForSalePage onNavigate={handleNavigate} />;
+    }
+
+    if (currentPage === 'townhouse-for-rent') {
+      return <TownhouseForRentPage onNavigate={handleNavigate} />;
+    }
+
+    if (currentPage === 'townhouse-for-sale') {
+      return <TownhouseForSalePage onNavigate={handleNavigate} />;
     }
 
     if (currentPage === 'agents') {

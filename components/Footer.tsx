@@ -9,10 +9,27 @@ interface FooterProps {
 const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   const propertyTypeLinks = footerLinks['Property Type'];
   
-  const handleLinkClick = (e: React.MouseEvent, href: string, page?: string) => {
+  const handleLinkClick = (e: React.MouseEvent, href: string, page?: string, linkName?: string) => {
       e.preventDefault();
-      if (onNavigate && page) {
+      
+      if (!onNavigate) {
+          console.log(`Navigating to ${href}`);
+          return;
+      }
+
+      // Explicit handlers for specific links based on name if no page prop is passed directly
+      if (page) {
           onNavigate(page);
+      } else if (linkName === 'Apartment for Rent') {
+          onNavigate('apartment-for-rent');
+      } else if (linkName === 'Apartment for Sale') {
+          onNavigate('apartment-for-sale');
+      } else if (linkName === 'Land for Sale') {
+          onNavigate('land-for-sale'); 
+      } else if (linkName === 'Townhouse for Rent') {
+          onNavigate('townhouse-for-rent');
+      } else if (linkName === 'Townhouse for Sale') {
+          onNavigate('townhouse-for-sale');
       } else {
           // Default behavior for external links or unimplemented internal links
           console.log(`Navigating to ${href}`);
@@ -38,7 +55,15 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                     </a>
                 </li>
                 {propertyTypeLinks['Residential'].filter(link => link.name !== 'For Rent' && link.name !== 'For Sale').map((link) => (
-                    <li key={link.name}><a href={link.href} className="hover:text-brand-orange">{link.name}</a></li>
+                    <li key={link.name}>
+                        <a 
+                            href={link.href} 
+                            onClick={(e) => handleLinkClick(e, link.href, undefined, link.name)} 
+                            className="hover:text-brand-orange"
+                        >
+                            {link.name}
+                        </a>
+                    </li>
                 ))}
             </ul>
           </div>
@@ -73,7 +98,6 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <div>
             <h3 className="font-bold mb-4">Support</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="mailto:support@sheltershub.com" className="hover:text-brand-orange">support@sheltershub.com</a></li>
               <li><a href="#" className="hover:text-brand-orange">Safety tips</a></li>
               <li>
                   <a href="#" onClick={(e) => handleLinkClick(e, '#', 'contact')} className="hover:text-brand-orange">

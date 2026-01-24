@@ -110,9 +110,8 @@ export const footerLinks = {
         'Residential': [
             { name: 'For Rent', href: '#' },
             { name: 'For Sale', href: '#' },
-            { name: 'Apartment/Condos for Rent', href: '#' },
-            { name: 'Apartment/Condos for Sale', href: '#' },
-            { name: 'Land for Sale', href: '#' },
+            { name: 'Apartment for Rent', href: '#' },
+            { name: 'Apartment for Sale', href: '#' },
             { name: 'Townhouse for Rent', href: '#' },
             { name: 'Townhouse for Sale', href: '#' },
         ],
@@ -121,7 +120,6 @@ export const footerLinks = {
             { name: 'Office for Sale', href: '#' },
             { name: 'Warehouse', href: '#' },
             { name: 'Industry', href: '#' },
-            { name: 'Land for Sale', href: '#' },
             { name: 'Shop for Rent', href: '#' },
             { name: 'Shop for Sale', href: '#' },
         ]
@@ -133,7 +131,6 @@ export const footerLinks = {
         { name: 'Cookie Policy', href: '#' },
     ],
     'Support': [
-        { name: 'support@sheltershub.com', href: 'mailto:support@sheltershub.com' },
         { name: 'Safety tips', href: '#' },
         { name: 'Contact Us', href: '#' },
         { name: 'FAQ', href: '#' },
