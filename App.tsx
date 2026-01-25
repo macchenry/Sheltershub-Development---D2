@@ -46,6 +46,8 @@ import ApartmentForSalePage from './components/ApartmentForSalePage';
 import LandForSalePage from './components/LandForSalePage';
 import TownhouseForRentPage from './components/TownhouseForRentPage';
 import TownhouseForSalePage from './components/TownhouseForSalePage';
+import OfficeForRentPage from './components/OfficeForRentPage';
+import OfficeForSalePage from './components/OfficeForSalePage';
 
 // Admin Pages
 import AdminDashboard from './components/admin/AdminDashboard';
@@ -220,6 +222,14 @@ const App: React.FC = () => {
 
     if (currentPage === 'townhouse-for-sale') {
       return <TownhouseForSalePage onNavigate={handleNavigate} />;
+    }
+
+    if (currentPage === 'office-for-rent') {
+      return <OfficeForRentPage onNavigate={handleNavigate} />;
+    }
+
+    if (currentPage === 'office-for-sale') {
+      return <OfficeForSalePage onNavigate={handleNavigate} />;
     }
 
     if (currentPage === 'agents') {

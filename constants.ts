@@ -104,41 +104,99 @@ export const latestProperties: Property[] = generateProperties(16, 6).map((p, in
 
 export const allPropertiesList: Property[] = generateProperties(22, 12); // Generate 12 properties for the listing page
 
-
-export const footerLinks = {
-    'Property Type': {
-        'Residential': [
-            { name: 'For Rent', href: '#' },
-            { name: 'For Sale', href: '#' },
-            { name: 'Apartment for Rent', href: '#' },
-            { name: 'Apartment for Sale', href: '#' },
-            { name: 'Townhouse for Rent', href: '#' },
-            { name: 'Townhouse for Sale', href: '#' },
-        ],
-        'Commercial': [
-            { name: 'Office for Rent', href: '#' },
-            { name: 'Office for Sale', href: '#' },
-            { name: 'Warehouse', href: '#' },
-            { name: 'Industry', href: '#' },
-            { name: 'Shop for Rent', href: '#' },
-            { name: 'Shop for Sale', href: '#' },
-        ]
-    },
-    'About Us': [
-        { name: 'About Sheltershub', href: '#' },
-        { name: 'Terms of Use', href: '#' },
-        { name: 'Privacy Policy', href: '#' },
-        { name: 'Cookie Policy', href: '#' },
+// Redesigned Footer Data Structure
+export const footerData = {
+    propertyCategories: [
+        {
+            title: 'Residential',
+            subtitle: '(Living / accommodation)',
+            links: [
+                'Houses for Sale', 'Houses for Rent', 'Apartments / Flats for Sale',
+                'Apartments / Flats for Rent', 'Townhouses', 'Duplexes',
+                'Compound Houses', 'Hostels (Student & Workers)',
+                'Serviced Apartments', 'Short-Let / Airbnb Homes'
+            ]
+        },
+        {
+            title: 'Commercial',
+            subtitle: '(Business)',
+            links: [
+                'Offices for Rent', 'Offices for Sale', 'Shops & Retail Spaces',
+                'Shopping Malls', 'Hotels', 'Guest Houses', 'Commercial Buildings'
+            ]
+        },
+        {
+            title: 'Land',
+            subtitle: '(For Development)',
+            links: [
+                'Residential Land for Sale', 'Commercial Land for Sale',
+                'Industrial Land for Sale', 'Agricultural / Farmland', 'Mixed-Use Land'
+            ]
+        },
+        {
+            title: 'Industrial',
+            subtitle: '(Manufacturing, storage & logistics)',
+            links: [
+                'Warehouses', 'Factories', 'Workshops',
+                'Industrial Yards', 'Logistics Depots'
+            ]
+        },
+        {
+            title: 'Mixed-Use',
+            subtitle: '(Combination of uses)',
+            links: [
+                'Residential + Commercial Buildings', 'Shop + Apartment Properties',
+                'Office + Retail Developments'
+            ]
+        },
+        {
+            title: 'Special Purpose',
+            subtitle: '(Institutional & social use)',
+            links: [
+                'Schools', 'Hospitals & Clinics', 'Religious',
+                'Event Centres', 'Government / Public Buildings'
+            ]
+        },
+        {
+            title: 'Development Status',
+            subtitle: '(Property condition & stage)',
+            links: [
+                'Off-Plan Properties', 'Newly Built Properties',
+                'Uncompleted Buildings', 'Renovated Properties', 'Old Buildings'
+            ]
+        }
     ],
-    'Support': [
-        { name: 'Safety tips', href: '#' },
-        { name: 'Contact Us', href: '#' },
-        { name: 'FAQ', href: '#' },
-    ],
-    'Our Socials': [
-        { name: 'Facebook', href: '#' },
-        { name: 'Instagram', href: '#' },
-        { name: 'YouTube', href: '#' },
-        { name: 'Twitter', href: '#' },
-    ],
+    infoCategories: [
+        {
+            title: 'About Us',
+            links: [
+                { name: 'About Sheltershub', page: 'about' },
+                { name: 'Terms of Use', page: 'terms' },
+                { name: 'Privacy Policy', href: '#' },
+                { name: 'Cookie Policy', href: '#' },
+            ]
+        },
+        {
+            title: 'Support',
+            links: [
+                { name: 'Safety Tips', href: '#' },
+                { name: 'Contact Us', page: 'contact' },
+                { name: 'FAQ', page: 'faq' },
+                { name: 'Sitemap', page: 'sitemap' },
+                { name: 'Report Fraud', page: 'report-fraud' },
+            ]
+        },
+        {
+            title: 'Our Socials',
+            links: [
+                { name: 'Facebook', href: '#' },
+                { name: 'Instagram', href: '#' },
+                { name: 'YouTube', href: '#' },
+                { name: 'X (Twitter)', href: '#' },
+            ]
+        }
+    ]
 };
+
+// Legacy support for other components until full migration (optional, keeping minimal for type safety if needed elsewhere)
+export const footerLinks = {}; 
