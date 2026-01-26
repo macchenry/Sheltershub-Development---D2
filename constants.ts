@@ -114,7 +114,7 @@ export const footerData = {
                 'Houses for Sale', 'Houses for Rent', 'Apartments / Flats for Sale',
                 'Apartments / Flats for Rent', 'Townhouses', 'Duplexes',
                 'Compound Houses', 'Hostels (Student & Workers)',
-                'Serviced Apartments', 'Short-Let / Airbnb Homes'
+                'Serviced Apartments', 'Short-Let', 'Airbnb Homes'
             ]
         },
         {
@@ -153,12 +153,12 @@ export const footerData = {
             title: 'Special Purpose',
             subtitle: '(Institutional & social use)',
             links: [
-                'Schools', 'Hospitals & Clinics', 'Religious',
-                'Event Centres', 'Government / Public Buildings'
+                'Schools', 'Hospitals & Clinics',
+                'Open Venues/Event Centres', 'Government / Public Buildings'
             ]
         },
         {
-            title: 'Development Status',
+            title: 'Development',
             subtitle: '(Property condition & stage)',
             links: [
                 'Off-Plan Properties', 'Newly Built Properties',
@@ -199,4 +199,4 @@ export const footerData = {
 };
 
 // Legacy support for other components until full migration (optional, keeping minimal for type safety if needed elsewhere)
-export const footerLinks = {}; 
+export const footerLinks = {};
